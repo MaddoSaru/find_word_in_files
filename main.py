@@ -28,7 +28,7 @@ def find_queries_with_specific_word(files_path: str, word: str) -> Dict:
     for file_name in files_list:
         query_str = read_json_file(files_path=files_path, file_name=file_name)
         if query_str is not None:
-            if word in query_str:
+            if ' ' + word + ' ' in query_str:
                 output_dict[file_name] = query_str
 
     return output_dict
